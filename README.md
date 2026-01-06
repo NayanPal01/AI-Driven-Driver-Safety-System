@@ -1,127 +1,138 @@
-🚗 AI-Powered Driver Safety & Drowsiness Detection System
+# 🚗 AI-Powered Driver Safety System
 
-An intelligent real-time driver monitoring system designed to detect drowsiness, prevent accidents, and analyze driver behavior using AI, embedded systems, and a web dashboard.
+An intelligent real-time driver monitoring and accident prevention system that detects driver drowsiness using AI-based computer vision, triggers safety actions, and provides driver behavior analytics through an interactive web dashboard.
 
-📌 Problem Statement
+---
 
-Driver drowsiness is one of the leading causes of road accidents worldwide.
-Most systems either warn the driver too late or provide no actionable response.
+## 📌 Problem Statement
 
-This project builds a fully automated safety system that:
+Driver drowsiness is one of the leading causes of road accidents worldwide.  
+Traditional warning systems often react too late or fail to provide meaningful safety intervention.
 
-Detects drowsiness in real time
+This project proposes an automated driver safety solution that continuously monitors the driver's alertness, detects drowsiness in real time, and takes immediate corrective actions to prevent accidents.
 
-Triggers alerts
+---
 
-Stops the vehicle engine if the driver becomes unresponsive
+## 💡 Solution Overview
 
-Displays safe nearby locations
+The system integrates computer vision, embedded hardware, intelligent decision logic, and a web interface to create a complete safety platform.
 
-Records all driver activity for analysis on a web dashboard
+### System Workflow
 
-💡 Solution Overview
+1. Camera captures driver's face in real time  
+2. Dlib detects facial landmarks and eye state  
+3. Eye-closure duration is analyzed for drowsiness detection  
+4. If drowsiness exceeds the safety threshold:
+   - 🔊 Buzzer alarm is activated  
+   - 🛑 Vehicle engine is stopped via motor control  
+   - 🗺️ Nearest safe locations are fetched using GPS  
+5. All events are recorded and displayed on the Streamlit web dashboard
 
-The system uses computer vision + embedded control to monitor the driver’s eyes continuously.
+---
 
-Working Flow
+## 🧠 Key Features
 
-Camera captures driver's face
+- Real-time drowsiness detection using AI-based facial landmark analysis  
+- Automatic engine shutdown for accident prevention  
+- Audio alert system using buzzer  
+- GPS-based safe location display  
+- Interactive web dashboard for driver behavior monitoring  
+- Analytics for most frequent drowsiness time and safety interventions  
 
-Dlib detects facial landmarks & eye state
+---
 
-Drowsiness is calculated using eye-closure duration
+## 🛠️ Technologies & Hardware
 
-If threshold exceeded:
+### Software
+- Python  
+- Dlib (Facial Landmark Detection)  
+- OpenCV  
+- NumPy  
+- Streamlit  
 
-🔊 Buzzer alarm activates
+### Hardware
+- Raspberry Pi  
+- Camera Module  
+- Motor (Engine Simulation)  
+- Buzzer  
+- GPS Module  
 
-🛑 Engine is automatically stopped via motor control
+---
 
-🗺️ Nearest safe locations are fetched using GPS
 
-All events are logged and visualized on a Streamlit dashboard
+## 🧩 System Architecture Diagram
 
-🧠 Key Features
+```text
++--------------------+
+|      Camera        |
+| (Driver Face Feed) |
++---------+----------+
+          |
+          v
++---------------------------+
+|     Raspberry Pi          |
+|  - Video Processing       |
+|  - Dlib Facial Landmarks  |
+|  - Drowsiness Analysis    |
++-------------+-------------+
+              |
+     +--------+--------+
+     |                 |
+     v                 v
++------------+   +--------------+
+|   Buzzer   |   |    Motor     |
+| (Alarm)    |   | (Engine Ctrl)|
++------------+   +--------------+
+              |
+              v
+        +----------------+
+        |     GPS        |
+        |  Location Data|
+        +--------+-------+
+                 |
+                 v
++----------------------------------+
+|     Streamlit Web Dashboard      |
+|  - Alert History                 |
+|  - Drowsiness Analytics          |
+|  - Engine Control Events         |
+|  - Safety Insights               |
++----------------------------------+
 
-Real-time drowsiness detection
+```
 
-Automatic engine shutdown on prolonged drowsiness
+## 📊 Web Dashboard
 
-Audio alert system using buzzer
+The Streamlit-based dashboard provides real-time and historical insights into driver behavior and safety events:
 
-GPS-based safe location display
+- **Live driver status:** Alert / Drowsy / Engine Stopped  
+- **Timeline of drowsiness events**  
+- **Most frequent drowsiness time analysis**  
+- **Engine control & alert history**  
+- **GPS-based safe location display**  
+- **System health and activity logs**
 
-Web dashboard with driver behavior analytics
+---
 
-Tracks most frequent drowsiness time, alert history, and safety actions
+## 🧪 Applications
 
-🛠️ Tech Stack & Hardware
-Software
+- Smart vehicles  
+- Fleet management systems  
+- Driver safety monitoring  
+- Accident prevention solutions  
 
-Python
+---
 
-Dlib – facial landmark & eye detection
+## 🚀 Future Enhancements
 
-Streamlit – web dashboard
+- Deep learning–based eye-state classification  
+- Cloud-based storage and multi-vehicle tracking  
+- Mobile app integration  
+- Voice alerts & adaptive safety thresholds  
 
-OpenCV
+---
 
-NumPy
+## 👨‍💻 Author
 
-Hardware
-
-Raspberry Pi
-
-Camera Module
-
-Motor (simulates engine control)
-
-Buzzer
-
-GPS Module
-
-🧪 System Architecture
-Camera → Raspberry Pi → Dlib (Eye Detection)
-            ↓
-    Drowsiness Analysis Engine
-            ↓
-    ┌────────────┬────────────┐
- Alarm (Buzzer)  Motor Control (Engine Stop)
-            ↓
-        GPS Location
-            ↓
-     Streamlit Web Dashboard
-
-📊 Dashboard Insights
-
-The web dashboard provides:
-
-Driver alert history
-
-Most frequent drowsiness time
-
-Number of engine shutdowns
-
-Safety intervention statistics
-
-Live system status
-
-🧩 Applications
-
-Smart vehicles
-
-Fleet management systems
-
-Driver safety monitoring
-
-Accident prevention systems
-
-🚀 Future Improvements
-
-Deep learning–based eye state classification
-
-Cloud storage & multi-vehicle tracking
-
-Mobile app integration
-
-Voice alerts & adaptive safety thresholds
+**Nayan Pal**  
+AI/ML Developer | Computer Vision | Embedded Systems
