@@ -134,5 +134,5 @@ The Streamlit-based dashboard provides real-time and historical insights into dr
 
 ## 👨‍💻 Author
 
-**Nayan Pal**  
+**Nayan Pal**  & **Meghnad Debnath**
 AI/ML Developer | Computer Vision | Embedded Systems
